@@ -1,0 +1,65 @@
+﻿@model Freelancer.Domain.claim
+
+@{
+    ViewBag.Title = "PostClaim";
+}
+
+<h2>PostClaim</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>claim</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.contenu, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.contenu)
+                @Html.ValidationMessageFor(model => model.contenu)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.email, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.email)
+                @Html.ValidationMessageFor(model => model.email)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.state, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.state)
+                @Html.ValidationMessageFor(model => model.state)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.title, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.title)
+                @Html.ValidationMessageFor(model => model.title)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
