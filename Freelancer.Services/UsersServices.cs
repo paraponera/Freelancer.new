@@ -57,8 +57,8 @@ namespace Freelancer.Services
         public statistique statistique()
         {
             statistique s = new statistique();
-            s.nbrFreelancer = utOfWork.UserRepository.GetMany(u => u.type.Equals("freelancer")).Count();
-            s.nbrJobOwner = utOfWork.UserRepository.GetMany(u => u.type.Equals("jobowner")).Count();
+            s.nbrFreelancer = utOfWork.UserRepository.GetMany(u => u.DTYPE.Equals("freelancer")).Count();
+            s.nbrJobOwner = utOfWork.UserRepository.GetMany(u => u.DTYPE.Equals("jobowner")).Count();
             return s;
         }
 

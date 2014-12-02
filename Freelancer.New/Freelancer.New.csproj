@@ -57,6 +57,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -299,6 +300,7 @@
     <Content Include="Content\static\components\leaflet\dist\images\marker-icon.png" />
     <Content Include="Content\static\components\x-editable\dist\bootstrap3-editable\img\clear9389.png" />
     <Content Include="Content\static\components\x-editable\dist\bootstrap3-editable\img\loading9389.gif" />
+    <Content Include="Content\static\e27-freelancer.png" />
     <Content Include="Content\static\facebook-video.png" />
     <Content Include="Content\static\favicon-160x160.png" />
     <Content Include="Content\static\favicon-16x16.png" />
@@ -306,6 +308,7 @@
     <Content Include="Content\static\favicon-32x32.png" />
     <Content Include="Content\static\favicon-96x96.png" />
     <Content Include="Content\static\favicon.ico" />
+    <Content Include="Content\static\freelancer-logo.png" />
     <Content Include="Content\static\mstile-144x144.png" />
     <Content Include="Content\static\reform-logo.png" />
     <Content Include="Content\static\theme\bootstrap-sass\fonts\glyphicons-halflings-regularfdb0.svg" />
@@ -505,6 +508,7 @@
     <Content Include="Content\wp-content\themes\chakra-wordpress\chakra\img\thumb-back.html.tmp" />
     <Content Include="Content\wp-content\themes\chakra-wordpress\chakra\img\thumb-forward.html.tmp" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -559,6 +563,8 @@
     <Content Include="Views\Shared\Template.cshtml" />
     <Content Include="Views\ManageUser\beforedet.cshtml" />
     <Content Include="Views\Platform\Signout.cshtml" />
+    <Content Include="Views\Platform\Addfriend2.cshtml" />
+    <Content Include="Views\Platform\popup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

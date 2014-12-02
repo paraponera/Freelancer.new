@@ -27,6 +27,14 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.title, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.title)
+                @Html.ValidationMessageFor(model => model.title)
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.description, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.description)
@@ -50,13 +58,7 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.state, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.state)
-                @Html.ValidationMessageFor(model => model.state)
-            </div>
-        </div>
+        
 
         <div class="form-group">
             @Html.LabelFor(model => model.title, new { @class = "control-label col-md-2" })
@@ -66,21 +68,7 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.userid, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.userid)
-                @Html.ValidationMessageFor(model => model.userid)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.categ_fk, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.categ_fk)
-                @Html.ValidationMessageFor(model => model.categ_fk)
-            </div>
-        </div>
+        
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

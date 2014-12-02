@@ -33,17 +33,17 @@
     <link rel="apple-touch-icon" sizes="120x120" href="../../Content/static//apple-touch-icon-120x120.png" />
     <link rel="apple-touch-icon" sizes="76x76" href="../../Content/static//apple-touch-icon-76x76.png" />
     <link rel="apple-touch-icon" sizes="152x152" href="../../Content/static//apple-touch-icon-152x152.png" />
-    <link rel="icon" type="image/png" href="../../Content/static//favicon-16x16.png" sizes="16x16" />
-    <link rel="icon" type="image/png" href="../../Content/static//favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="../../Content/static//favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/png" href="../../Content/static//favicon-160x160.png" sizes="160x160" />
-    <link rel="icon" type="image/png" href="../../Content/static//favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="../../Content/static/freelancer-logo.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../../Content/static/freelancer-logo.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../../Content/static/freelancer-logo.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../../Content/static/freelancer-logo.png" sizes="160x160" />
+    <link rel="icon" type="image/png" href="../../Content/static/freelancer-logo.png" sizes="196x196" />
     <meta name="msapplication-TileColor" content="#d40000" />
     <meta name="msapplication-TileImage" content="../../Content/static//mstile-144x144.png" />
 
     <!--<link rel="shortcut icon" href="/static/favicon.png">-->
     <!-- For everything else -->
-    <link rel="shortcut icon" href="../../Content/static//favicon.ico">
+    <link rel="shortcut icon" href="../../Content/static/freelancer-logo.png">
 
 
 
@@ -68,7 +68,7 @@
                     <span class="sr-only">Toggle navigation</span>
                     <span class="fa fa-bars fa-lg fa-fw fa-inverse"></span>
                 </button>
-                <a class="navbar-brand" href="../index.html"><img src="../../Content/static//reform-logo.png" -width="50" -height="35" height="26" alt="Tunisian Institutional Reform"></a>
+                <a class="navbar-brand" href="../index.html"><img src="../../Content/static/freelancer-logo.png" -width="50" -height="35" height="26" alt="Tunisian Institutional Reform"></a>
             </div>
 
             <div class="navbar-collapse collapse">
@@ -121,11 +121,13 @@
                         @Html.ValidationSummary(true)
 
                         <div class="form-group">
+
+
                             @Html.LabelFor(model => model.DTYPE, new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
                                 @Html.EditorFor(model => model.DTYPE)
                                 @Html.ValidationMessageFor(model => model.DTYPE)
-                           
+                          
                             </div>
                         </div>
 
@@ -161,13 +163,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.fund, new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.fund)
-                                @Html.ValidationMessageFor(model => model.fund)
-                            </div>
-                        </div>
+                        
 
                         <div class="form-group">
                             @Html.LabelFor(model => model.last_name, new { @class = "control-label col-md-2" })
@@ -185,13 +181,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.state, new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.state)
-                                @Html.ValidationMessageFor(model => model.state)
-                            </div>
-                        </div>
+                        
 
                         <div class="form-group">
                             @Html.LabelFor(model => model.type, new { @class = "control-label col-md-2" })
@@ -225,13 +215,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.id, new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.id)
-                                @Html.ValidationMessageFor(model => model.id)
-                            </div>
-                        </div>
+                       
 
                         <div class="form-group">
                             @Html.LabelFor(model => model.friend_list, new { @class = "control-label col-md-2" })

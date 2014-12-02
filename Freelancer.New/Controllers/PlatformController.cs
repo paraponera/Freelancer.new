@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
+using System.Windows.Forms;
 
 
 namespace Freelancer.New.Controllers
@@ -45,11 +47,14 @@ namespace Freelancer.New.Controllers
         [HttpPost]
         public ActionResult PostClaim(claim claim)
         {
-          
+            if (ModelState.IsValid)
+            {
                 IClaimService a = new ClaimService();
+                claim.email = (string)Session["email"];
                 a.CreateClaim(claim);
                 return RedirectToAction("View1");
-            
+            }
+            else { return View(); }
         }
 
 
@@ -68,6 +73,12 @@ namespace Freelancer.New.Controllers
         [HttpPost]
         public ActionResult TestAddFriend(user user2)
         {
+
+            
+          
+           
+           
+        
             if (Session["name"] == null)
             {
                 return RedirectToAction("../ManageUser/Authentication");
@@ -78,13 +89,14 @@ namespace Freelancer.New.Controllers
                 IClaimService b = new ClaimService();
                 if (b.test(userconnected, user2.e_mail) == true)
                 {
-                    return RedirectToAction("View1");
+                    return RedirectToAction("ListFriends");
 
                 }
                 else
                 {
-
-                    return RedirectToAction("ListClaims");
+                    MessageBox.Show("The email address does not exist", "wrong email",
+                   MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    return RedirectToAction("TestAddFriend");
                 }
 
             }
@@ -157,6 +169,11 @@ namespace Freelancer.New.Controllers
 
             return View();
         }
+        public ActionResult popup()
+        {
+            return View();
+        }
+
 
         [HttpGet]
         public ActionResult remove(int id)

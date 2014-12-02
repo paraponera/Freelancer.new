@@ -31,6 +31,7 @@ namespace Freelancer.Services
                 title = title,
               email = email,
                 contenu = contenu
+
             };
             utOfWork.ClaimRepository.Add(claim1);
             utOfWork.Commit();
@@ -52,6 +53,7 @@ namespace Freelancer.Services
             user user = utOfWork.UserRepository.Get(p => p.e_mail == email);
             if (user == null)
             {
+               
                 return false;
 
             }

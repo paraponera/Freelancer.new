@@ -48,6 +48,9 @@ namespace Freelancer.New.Controllers
         {
             if (ModelState.IsValid)
             {
+                u.id = 1;
+                u.fund = 0;
+                u.state = true;
                 userr.AddService(u);
                 return RedirectToAction("Authentication");
             }
@@ -82,7 +85,8 @@ namespace Freelancer.New.Controllers
                 user=userr.getUserbyid(id);
                 Session["name"] = user.first_name;
                 Session["id"] = id;
-                return RedirectToAction("Details/" + id);
+                Session["email"] = user.e_mail;
+                return RedirectToAction("../Jobs/Index");
             }
 
 
@@ -99,6 +103,7 @@ namespace Freelancer.New.Controllers
         {
 
             user o = userr.getUserbyid(id);
+            
             return View(o);
         }
 

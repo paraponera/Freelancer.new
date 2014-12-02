@@ -17,6 +17,7 @@ namespace Freelancer.Data.Models.Mapping
 
             this.Property(t => t.email)
                 .HasMaxLength(255);
+            this.Property(t => t.contenu).IsRequired();
 
             this.Property(t => t.state)
                 .HasMaxLength(255);

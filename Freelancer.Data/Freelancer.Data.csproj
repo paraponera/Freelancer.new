@@ -90,6 +90,10 @@
     <Compile Include="Migrations\201412012140097_ajout_table_applymaj.Designer.cs">
       <DependentUpon>201412012140097_ajout_table_applymaj.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201412021757398_Req.cs" />
+    <Compile Include="Migrations\201412021757398_Req.Designer.cs">
+      <DependentUpon>201412021757398_Req.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Mapping\applyMap.cs" />
     <Compile Include="Models\Mapping\bankMap.cs" />
@@ -121,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201412012140097_ajout_table_applymaj.resx">
       <DependentUpon>201412012140097_ajout_table_applymaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412021757398_Req.resx">
+      <DependentUpon>201412021757398_Req.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
