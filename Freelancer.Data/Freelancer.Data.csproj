@@ -82,11 +82,21 @@
     <Compile Include="Migrations\201411300435563_addingfirendlist.Designer.cs">
       <DependentUpon>201411300435563_addingfirendlist.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201412012131576_ajout_table_apply.cs" />
+    <Compile Include="Migrations\201412012131576_ajout_table_apply.Designer.cs">
+      <DependentUpon>201412012131576_ajout_table_apply.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412012140097_ajout_table_applymaj.cs" />
+    <Compile Include="Migrations\201412012140097_ajout_table_applymaj.Designer.cs">
+      <DependentUpon>201412012140097_ajout_table_applymaj.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Mapping\applyMap.cs" />
     <Compile Include="Models\Mapping\bankMap.cs" />
     <Compile Include="Models\Mapping\categoryMap.cs" />
     <Compile Include="Models\Mapping\claimMap.cs" />
     <Compile Include="Models\Mapping\jobMap.cs" />
+    <Compile Include="Models\Mapping\Login.cs" />
     <Compile Include="Models\Mapping\paymentMap.cs" />
     <Compile Include="Models\Mapping\sous_categoriesMap.cs" />
     <Compile Include="Models\Mapping\userMap.cs" />
@@ -105,6 +115,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201411300435563_addingfirendlist.resx">
       <DependentUpon>201411300435563_addingfirendlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412012131576_ajout_table_apply.resx">
+      <DependentUpon>201412012131576_ajout_table_apply.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412012140097_ajout_table_applymaj.resx">
+      <DependentUpon>201412012140097_ajout_table_applymaj.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

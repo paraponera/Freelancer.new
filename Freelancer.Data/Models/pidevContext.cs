@@ -19,6 +19,7 @@ namespace Freelancer.Data.Models
             : base("pidevContext")
         {
         }
+        public DbSet<apply> applies { get; set; }
         public DbSet<Friendslist> Friendslists { get; set; }
         public DbSet<bank> banks { get; set; }
         public DbSet<category> categories { get; set; }
@@ -30,6 +31,7 @@ namespace Freelancer.Data.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Configurations.Add(new applyMap());
             modelBuilder.Configurations.Add(new bankMap());
             modelBuilder.Configurations.Add(new categoryMap());
             modelBuilder.Configurations.Add(new claimMap());

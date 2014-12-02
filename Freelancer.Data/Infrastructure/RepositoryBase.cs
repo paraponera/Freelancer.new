@@ -43,6 +43,10 @@ namespace Freelancer.Data.Infrastructure
             var e = dbset.Find(id);
             dbset.Remove(e);
         }
+        public virtual void Delete(P entity)
+        {
+            dbset.Remove(entity);
+        }
 
         public virtual void Delete(string id)
         {

@@ -1,0 +1,108 @@
+﻿@model IEnumerable<Freelancer.Domain.job>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@using Freelancer.Data.Models
+
+
+    <h2>List of Jobs</h2>
+
+
+    <table>
+        <tr>
+            <th><h2>Search by    .</h2></th></tr>
+        <tr>
+            
+
+                @using (Html.BeginForm("Index", "jobs", FormMethod.Get, new { enctype = "multipart/form-data" }))
+        {
+
+               <th><h3>title :</h3></th><th> @Html.TextBox("Title")      </th>
+                <th>  <h3>Category :</h3> </th><th>     @Html.TextBox("jobcategory")</th>
+
+    <th>  <input type="submit" value="Search" /></th>
+        }
+            
+
+           
+        </tr>
+    </table>
+
+
+    <!--
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p> -->
+
+
+
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.cost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estimate_duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.required_skills)
+            </th>
+            <th><!--
+                @Html.DisplayNameFor(model => model.state) -->Category
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.userid)
+            </th>
+            <!--
+            <th><!--
+                @Html.DisplayNameFor(model => model.categ_fk)
+            </th> -->
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+    {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.estimate_duration)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.required_skills)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.state)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.userid)
+                </td>
+                <!--
+                <td>
+                    @Html.DisplayFor(modelItem => item.categ_fk)
+                </td>-->
+                <td>
+                    <!-- @Html.ActionLink("Edit", "Edit", new { id=item.id }) |-->
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) 
+                    <!--@Html.ActionLink("Delete", "Delete", new { id=item.id }) -->
+                </td>
+            </tr>
+        }
+
+    </table>

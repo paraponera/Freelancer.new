@@ -12,6 +12,7 @@ namespace Freelancer.Data.Infrastructure
         void Add(P entity);
         void Update(P entity);
         void Delete(int id);
+        void Delete(P entity);
         void Delete(string id);
         void Delete(Expression<Func<P, bool>> where);
         P GetById(int id);

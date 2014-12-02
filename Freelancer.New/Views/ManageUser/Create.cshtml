@@ -1,0 +1,364 @@
+﻿
+
+@model Freelancer.Domain.user
+@{
+    Layout = null;
+}
+@{
+    ViewBag.Title = "Create";
+}
+@using Freelancer.Data.Models
+
+
+
+<!doctype html>
+
+<html lang="en" class="no-js">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Freelancer</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- icons & favicons -->
+
+    <link rel="apple-touch-icon" sizes="57x57" href="../../Content/static//apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../../Content/static//apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../../Content/static//apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../../Content/static//apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../../Content/static//apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../../Content/static//apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../../Content/static//apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../../Content/static//apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="../../Content/static//favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../../Content/static//favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../../Content/static//favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../../Content/static//favicon-160x160.png" sizes="160x160" />
+    <link rel="icon" type="image/png" href="../../Content/static//favicon-196x196.png" sizes="196x196" />
+    <meta name="msapplication-TileColor" content="#d40000" />
+    <meta name="msapplication-TileImage" content="../../Content/static//mstile-144x144.png" />
+
+    <!--<link rel="shortcut icon" href="/static/favicon.png">-->
+    <!-- For everything else -->
+    <link rel="shortcut icon" href="../../Content/static//favicon.ico">
+
+
+
+    <link rel="stylesheet" href="../../Content/static//CACHE/css/5670482863bb.css" type="text/css" />
+
+
+
+
+
+
+</head>
+<body>
+
+
+
+
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="fa fa-bars fa-lg fa-fw fa-inverse"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html"><img src="../../Content/static//reform-logo.png" -width="50" -height="35" height="26" alt="Tunisian Institutional Reform"></a>
+            </div>
+
+            <div class="navbar-collapse collapse">
+
+                <ul class="nav navbar-nav"></ul>
+
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle needsclick" data-toggle="dropdown">
+                            <i class="fa fa-user"></i>
+
+                            <span>Nobody!</span>
+
+                            <b class="caret"></b>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href=""><i class="fa fa-sign-in"></i> Sign in</a></li>
+                        </ul>
+
+                    </li>
+
+                </ul>
+
+            </div><!--/.navbar-collapse -->
+    </nav>
+    </nav>
+
+
+
+    <!-- View -->
+    <div class="container">
+
+
+        <div class="page-header">
+            <h1 class="text-center">Sign up</h1>
+        </div>
+      
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 well">
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                  @Html.ValidationSummary(true)
+                    <div class="form-horizontal">
+                        <h4>User</h4>
+                        <hr />
+                        @Html.ValidationSummary(true)
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.DTYPE, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.DTYPE)
+                                @Html.ValidationMessageFor(model => model.DTYPE)
+                           
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.city, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.city)
+                                @Html.ValidationMessageFor(model => model.city)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.country, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.country)
+                                @Html.ValidationMessageFor(model => model.country)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.e_mail, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.e_mail)
+                                @Html.ValidationMessageFor(model => model.e_mail)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.first_name, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.first_name)
+                                @Html.ValidationMessageFor(model => model.first_name)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.fund, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.fund)
+                                @Html.ValidationMessageFor(model => model.fund)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.last_name, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.last_name)
+                                @Html.ValidationMessageFor(model => model.last_name)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.pwd, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.pwd)
+                                @Html.ValidationMessageFor(model => model.pwd)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.state, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.state)
+                                @Html.ValidationMessageFor(model => model.state)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.type, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.type)
+                                @Html.ValidationMessageFor(model => model.type)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.username, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.username)
+                                @Html.ValidationMessageFor(model => model.username)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.about, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.about)
+                                @Html.ValidationMessageFor(model => model.about)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.cv, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.cv)
+                                @Html.ValidationMessageFor(model => model.cv)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.id, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.id)
+                                @Html.ValidationMessageFor(model => model.id)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.friend_list, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.friend_list)
+                                @Html.ValidationMessageFor(model => model.friend_list)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.skills, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.skills)
+                                @Html.ValidationMessageFor(model => model.skills)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.company_name, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.company_name)
+                                @Html.ValidationMessageFor(model => model.company_name)
+                            </div>
+                        </div>
+
+                        
+
+                      
+
+
+
+                        
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Create" class="btn btn-primary btn-block" />
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+
+
+    </div>
+    <!-- View - END -->
+
+    <div id="footer">
+        <div class="container text-center"></div>
+
+        <!-- View Addons: dialogs, client-side templates, .... -->
+        <!-- View Addons - END -->
+        <!-- Layout Scripts Dependencies -->
+
+
+        <script type="text/javascript">
+            var csrf_token = "TXY8rv6iwVXUiQwFUPf8ZwZypebQgBUX";
+
+            var reform = {
+                data: {},
+                widgets: {},
+                urls: {},
+                i18n: {},
+                l10n: {},
+            };
+
+            reform.i18n.language = "en";
+            reform.i18n.bidi = false;
+            reform.i18n.languages = ["en", "ar"];
+
+            reform.l10n.TIME_ZONE = "Africa/Tunis";
+
+        </script>
+
+        <!--<script type="text/javascript" src="/i18n/base/"></script>-->
+
+        <script type="text/javascript" src="static//CACHE/js/812abdebffc1.js"></script>
+
+
+
+
+        <!-- Layout Scripts Dependencies - END -->
+        <!-- View Scripts -->
+        <!-- View Scripts - END -->
+
+        <script type="text/javascript">
+            if ($.pnotify) {
+                $.pnotify.defaults.styling = "bootstrap";
+                $.pnotify.defaults.opacity = 0.9;
+                //$.pnotify.defaults.nonblock = true;
+                $.pnotify.defaults.nonblock_opacity = 0.3;
+                //$.pnotify.defaults.history = false;
+                $.pnotify.defaults.stack.spacing1 = 20;
+            }
+
+            if ($.blockUI) {
+                $.blockUI.defaults.baseZ = 800;
+                $.blockUI.defaults.css.border = 'none';
+                $.blockUI.defaults.message = 'Loading ...';
+            }
+
+            $(document).ready(function () {
+                //$('select').selectpicker();
+                $('.clean-empty option[value=]').remove();
+                $('.clean-empty input:radio[value=]').parent().remove();
+
+                $('#ui-language-slection-form select').on('change', function (e) {
+                    this.form.submit();
+                });
+                $('#ui-language-slection-form button').hide();
+
+                //FastClick.attach(document.body);
+
+                /*
+                if (Modernizr.touch) {
+                  // Hides mobile browser's address bar when page is done loading.
+                  window.addEventListener('load', function(e) {
+                    setTimeout(function() { window.scrollTo(0, 1); }, 1);
+                  }, false);
+                }
+                */
+
+            });
+        </script>
+
+
+</body>
+<!-- Mirrored from ipolice.tn/signup/?next=/ by HTTrack Website Copier/3.x [XR&CO'2013], Sun, 20 Apr 2014 12:06:18 GMT -->
+</html>

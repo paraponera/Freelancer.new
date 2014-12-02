@@ -99,6 +99,9 @@ namespace Freelancer.Services
             Friendslist[] req = new Friendslist[202];
 
             IEnumerable<Friendslist> friend = utOfWork.FriendslistRepository.GetMany(p => p.idFriend == iduser);
+            IEnumerable<Friendslist> friend2 = utOfWork.FriendslistRepository.GetMany(p => p.idUser == iduser);
+
+            
             foreach (Friendslist a in friend.ToList())
             {
 
@@ -108,6 +111,18 @@ namespace Freelancer.Services
                     
                   
                     utOfWork.FriendslistRepository.Delete(a.id);
+                    utOfWork.Commit();
+                }
+            }
+            foreach (Friendslist b in friend2.ToList())
+            {
+
+
+                if (b.idFriend == idfriend)
+                {
+
+
+                    utOfWork.FriendslistRepository.Delete(b.id);
                     utOfWork.Commit();
                 }
             }
@@ -130,7 +145,7 @@ namespace Freelancer.Services
             Friendslist[] req = new Friendslist[202];
 
             IEnumerable<Friendslist> friend = utOfWork.FriendslistRepository.GetMany(p => p.idFriend == idUser);
-
+            IEnumerable<Friendslist> friend2 = utOfWork.FriendslistRepository.GetMany(p => p.idUser == idUser);
 
 
 
@@ -141,6 +156,22 @@ namespace Freelancer.Services
                 {
 
                     testList.Add(utOfWork.UserRepository.Get(p => p.id == a.idUser));
+
+                }
+                else
+                {
+
+
+
+                }
+            }
+            foreach (Friendslist b in friend2.ToList())
+            {
+
+                if (b.friend == true)
+                {
+
+                    testList.Add(utOfWork.UserRepository.Get(p => p.id == b.idFriend));
 
                 }
                 else

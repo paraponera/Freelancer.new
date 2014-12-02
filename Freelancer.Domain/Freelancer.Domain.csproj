@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="apply.cs" />
     <Compile Include="bank.cs" />
     <Compile Include="category.cs" />
     <Compile Include="claim.cs" />
@@ -47,6 +48,7 @@
     <Compile Include="payment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sous_categories.cs" />
+    <Compile Include="statistique.cs" />
     <Compile Include="user.cs" />
   </ItemGroup>
   <ItemGroup />

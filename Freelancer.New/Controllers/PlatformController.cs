@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace Freelancer.New.Controllers
 {
     public class PlatformController : Controller
@@ -31,72 +32,110 @@ namespace Freelancer.New.Controllers
 
         public ActionResult PostClaim()
         {
-            return View();
+            if (Session["name"] == null)
+            {
+                return RedirectToAction("../ManageUser/Authentication");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         [HttpPost]
         public ActionResult PostClaim(claim claim)
         {
-            IClaimService a = new ClaimService();
-            a.CreateClaim(claim);
-            return RedirectToAction("View1");
+          
+                IClaimService a = new ClaimService();
+                a.CreateClaim(claim);
+                return RedirectToAction("View1");
+            
         }
 
 
 
         public ActionResult TestAddFriend()
         {
-            return View();
+            if (Session["name"] == null)
+            {
+                return RedirectToAction("../ManageUser/Authentication");
+            }
+            else
+            {
+                return View();
+            }
         }
         [HttpPost]
         public ActionResult TestAddFriend(user user2)
         {
-            int userconnected = 3;
-             IClaimService b = new ClaimService();
-             if (b.test(userconnected, user2.e_mail) == true)
-              {
-                  return RedirectToAction("View1");
-          
+            if (Session["name"] == null)
+            {
+                return RedirectToAction("../ManageUser/Authentication");
             }
-              else{
+            else
+            {
+                int userconnected = (int)Session["id"];
+                IClaimService b = new ClaimService();
+                if (b.test(userconnected, user2.e_mail) == true)
+                {
+                    return RedirectToAction("View1");
 
-                  return RedirectToAction("ListClaims");
+                }
+                else
+                {
+
+                    return RedirectToAction("ListClaims");
+                }
+
             }
-
-          }
+        }
 
 
         public ActionResult ListRequest()
         {
-            int userconnected = 2;
-            IFriendlistService b = new FriendlistService();
-            var t = b.listRequest(userconnected);
-            return View(t);
+            if (Session["name"] == null)
+            {
+                return RedirectToAction("../ManageUser/Authentication");
+            }
+            else
+            {
+                int userconnected = (int)Session["id"];
+                IFriendlistService b = new FriendlistService();
+                var t = b.listRequest(userconnected);
+                return View(t);
+            }
         }
-       
-      
-       
-    
-        
-  
-        
-      
-        
+
+
+
+
+
+
+
+
+
 
         public ActionResult ListFriends()
         {
-            int userconnected = 2;
-            IFriendlistService b = new FriendlistService();
-            var t = b.listFriend(userconnected);
+            if (Session["name"] == null)
+            {
+                return RedirectToAction("../ManageUser/Authentication");
+            }
+            else
+            {
+                int userconnected = (int)Session["id"];
+                IFriendlistService b = new FriendlistService();
+                var t = b.listFriend(userconnected);
 
-           
-            return View(t);
+
+                return View(t);
+            }
         }
 
           [HttpGet]
         public ActionResult acc(int id)
         {
-            int userconnected = 2;
+            int userconnected = (int)Session["id"];
 
             IFriendlistService frien = new FriendlistService();
             frien.acceptfriend(id, userconnected);
@@ -106,7 +145,7 @@ namespace Freelancer.New.Controllers
         [HttpGet]
           public ActionResult deny(int id)
           {
-             int userconnected = 2;
+              int userconnected = (int)Session["id"];
               IFriendlistService friend = new FriendlistService();
               friend.denyfriend(id, userconnected);
               return RedirectToAction("ListRequest");
@@ -122,13 +161,20 @@ namespace Freelancer.New.Controllers
         [HttpGet]
         public ActionResult remove(int id)
         {
-            int userconnected = 2;
+            int userconnected = (int)Session["id"];
             IFriendlistService friend = new FriendlistService();
             friend.deletefriend(id,userconnected);
             return RedirectToAction("ListFriends");
 
         }
-   
+        public ActionResult Signout()
+        {
+            Session["name"] = null;
+            Session["id"] = null;
+            return RedirectToAction("../ManageUser/Authentication");
+        }
+        
+       
 
 
 
